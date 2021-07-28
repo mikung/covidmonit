@@ -1,0 +1,94 @@
+<div class="container mt-4 font-prompt-medium">
+  <div class="row">
+    <div class="col-md-2 text-center">
+      <img src="assets/images/covid-test.png" height="100" alt="">
+    </div>
+
+    <div class="col-md-10 p-0">
+      <div class="card card-custom gutter-b bg-primary">
+        <div class="card-body text-white d-inline-block">
+          <h1 class="float-left">ยอดผู้ป่วย Covid-19 Admit </h1>
+          <h1 class="float-right">จำนวน {{all| number}} ราย</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row p-0">
+    <div class="col-md-6 p-0 pr-2">
+      <div class="col-md-12 p-0">
+        <div class="card card-custom gutter-b text-white "  style="background-color: #6C6BD6">
+          <div class="card-header">
+            <h1 class="my-auto mx-auto text-center"><i class="las la-battery-three-quarters"></i> เด็ก</h1>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 text-center">
+                <div class="col-md-12">
+                  <img src="assets/images/boy.png" height="80" alt="">
+                </div>
+                <div class="col-md-12 mt-4">
+                  <h1>{{boy}}</h1>
+                </div>
+              </div>
+              <div class="col-md-6 text-center">
+                <div class="col-md-12">
+                  <img src="assets/images/girl.png" height="80" alt="">
+                </div>
+                <div class="col-md-12 mt-4">
+                  <h1>{{girl}}</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 p-0">
+      <div class="col-md-12 p-0 pl-2">
+        <div class="card card-custom gutter-b text-white" style="background-color: #5F4F89">
+          <div class="card-header text-center">
+            <h1 class="my-auto mx-auto"><i class="las la-battery-three-quarters"></i> ผู้ใหญ่</h1>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 text-center">
+                <div class="col-md-12">
+                  <img src="assets/images/boy%20(1).png" height="80" alt="">
+                </div>
+                <div class="col-md-12 mt-4">
+                  <h1>{{male}}</h1>
+                </div>
+              </div>
+              <div class="col-md-6 text-center">
+                <div class="col-md-12">
+                  <img src="assets/images/girl%20(1).png" height="80" alt="">
+                </div>
+                <div class="col-md-12 mt-4">
+                  <h1>{{female}}</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  <div class="row  ">-->
+<!--    <div class="card-body  rounded border btn" style="background-color: #61B5D9" *ngFor="let item of dataWard" (click)="gotoList(item.ward , item.name)">-->
+<!--      <div class="col-md-12">-->
+<!--        <span class="text-white font-prompt-regular" style="font-size: 18px"><h1 style="font-size: 24px" >{{item.name}}</h1></span>-->
+<!--        <hr style="border: 1px solid white">-->
+<!--        <span class="text-white font-prompt-medium" style="font-size: 18px"><h1 style="font-size: 40px" class="text-dark-75"> {{item.qty}}  </h1></span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+  <div class="row  ">
+    <div class="card-body  rounded border btn" style="background-color: #BF5748" *ngFor="let item of dataWard" (click)="gotoList(item.ward , item.name)">
+      <div class="col-md-12"  *ngIf="item.shortname == 'ICU'">
+        <span class="text-white font-prompt-regular" style="font-size: 18px"><h1 style="font-size: 24px" >{{item.name}}</h1></span>
+        <hr style="border: 1px solid white">
+        <span class="text-white font-prompt-medium" style="font-size: 18px"><h1 style="font-size: 40px" class="text-dark-75"> {{item.qty}}  </h1></span>
+      </div>
+    </div>
+  </div>
+</div>
