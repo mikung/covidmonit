@@ -1,0 +1,20 @@
+<div class="container mt-40 font-prompt-medium">
+  <div class="col-md-4 offset-md-4 ">
+    <div class="card card-custom gutter-b">
+      <div class="card-body">
+        <div class="col-md-12 text-center">
+          <img src="assets/images/covid-test.png" height="200" alt="">
+        </div>
+        <div class="col-md-12 text-center mt-4"><h1>Covid-19 Monitor</h1></div>
+        <div class="col-md-12 mt-4">
+          <input type="password" class="form-control" [(ngModel)]="password" (keydown.enter)="login()" placeholder="กรุณาใส่รหัสผ่านเพื่อเข้าสู่ระบบ">
+        </div>
+        <div class="col-md-12 mt-4 text-center">
+          <button class="btn btn-primary float-right" (click)="login()">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
