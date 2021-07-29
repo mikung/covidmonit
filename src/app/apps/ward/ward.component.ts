@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api.service';
 import {Router} from '@angular/router';
+import lodash from 'lodash';
 
 @Component({
   selector: 'app-ward',
@@ -16,6 +17,10 @@ export class WardComponent implements OnInit {
   male = 0;
   female = 0;
   all = 0;
+  wardRed: any = [];
+  wardOrange: any = [];
+  wardYello: any = [];
+  wardGreen: any = [];
 
   constructor(private api: ApiService, private router: Router) {
   }
@@ -30,6 +35,21 @@ export class WardComponent implements OnInit {
     console.log(rs);
     if (rs.ok) {
       this.dataWard = rs.message;
+      lodash.find(this.dataWard, (o: any) => {
+        if (o.shortname === 'FIELD' || o.shortname === null) {
+          this.wardGreen.push(o);
+        } else if (o.shortname === 'STAGEI') {
+          this.wardYello.push(o);
+        } else if (o.shortname === 'STAGEII') {
+          this.wardOrange.push(o);
+        } else if (o.shortname === 'ICU') {
+          this.wardRed.push(o);
+        } else {
+
+        }
+      });
+      console.log('this.wardRed');
+      console.log(this.wardRed);
     } else {
       this.dataWard = [];
     }
@@ -45,6 +65,7 @@ export class WardComponent implements OnInit {
     await sessionStorage.setItem('wardName', wardName);
     this.router.navigateByUrl('/listward');
   }
+
   async getCountCovid(): Promise<any> {
     const rs: any = await this.api.getCountCovid();
     if (rs.ok) {

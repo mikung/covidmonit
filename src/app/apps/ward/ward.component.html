@@ -83,8 +83,31 @@
 <!--    </div>-->
 <!--  </div>-->
   <div class="row  ">
-    <div class="card-body  rounded border btn" style="background-color: #BF5748" *ngFor="let item of dataWard" (click)="gotoList(item.ward , item.name)">
-      <div class="col-md-12"  *ngIf="item.shortname == 'ICU'">
+    <div class="card-body  rounded border btn" style="background-color: #BF5748" *ngFor="let item of wardRed" (click)="gotoList(item.ward , item.name)">
+      <div class="col-md-12">
+        <span class="text-white font-prompt-regular" style="font-size: 18px"><h1 style="font-size: 24px" >{{item.name}}</h1></span>
+        <hr style="border: 1px solid white">
+        <span class="text-white font-prompt-medium" style="font-size: 18px"><h1 style="font-size: 40px" class="text-dark-75"> {{item.qty}}  </h1></span>
+      </div>
+    </div>
+
+    <div class="card-body  rounded border btn" style="background-color: #FC8C78" *ngFor="let item of wardOrange" (click)="gotoList(item.ward , item.name)">
+      <div class="col-md-12">
+        <span class="text-white font-prompt-regular" style="font-size: 18px"><h1 style="font-size: 24px" >{{item.name}}</h1></span>
+        <hr style="border: 1px solid white">
+        <span class="text-white font-prompt-medium" style="font-size: 18px"><h1 style="font-size: 40px" class="text-dark-75"> {{item.qty}}  </h1></span>
+      </div>
+    </div>
+    <div class="card-body  rounded border btn" style="background-color: #FFDF7B" *ngFor="let item of wardYello" (click)="gotoList(item.ward , item.name)">
+      <div class="col-md-12">
+        <span class="text-white font-prompt-regular" style="font-size: 18px"><h1 style="font-size: 24px" >{{item.name}}</h1></span>
+        <hr style="border: 1px solid white">
+        <span class="text-white font-prompt-medium" style="font-size: 18px"><h1 style="font-size: 40px" class="text-dark-75"> {{item.qty}}  </h1></span>
+      </div>
+    </div>
+
+    <div class="card-body  rounded border btn" style="background-color: #00DEC6" *ngFor="let item of wardGreen" (click)="gotoList(item.ward , item.name)">
+      <div class="col-md-12">
         <span class="text-white font-prompt-regular" style="font-size: 18px"><h1 style="font-size: 24px" >{{item.name}}</h1></span>
         <hr style="border: 1px solid white">
         <span class="text-white font-prompt-medium" style="font-size: 18px"><h1 style="font-size: 40px" class="text-dark-75"> {{item.qty}}  </h1></span>
