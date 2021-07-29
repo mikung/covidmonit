@@ -23,6 +23,7 @@
     "datatables.net": "^1.10.25",
     "datatables.net-dt": "^1.1.0",
     "jquery": "^3.6.0",
+    "lodash": "^4.17.21",
     "ngx-bootstrap": "^6.2.0",
     "ngx-spinner": "^12.0.0",
     "rxjs": "~6.6.0",
